@@ -1,0 +1,104 @@
+Write a program to find the element of maximum value in each row.
+
+Input Format
+
+The first input corresponds to the number of rows. The second input corresponds to the number of columns. The third input corresponds to the elements of the 2D array.
+
+Constraints
+
+1<=n<=10^7
+
+Output Format
+
+The output corresponds to the maximum element in each row.
+
+Sample Input 0
+
+3
+3
+1 4 9
+3 5 1
+2 8 5
+Sample Output 0
+
+9
+5
+8
+Sample Input 1
+
+4
+3
+8 1 7
+3 4 5
+6 9 3
+2 2 2
+Sample Output 1
+
+8
+5
+9
+2
+ 
+1
+#include <stdio.h>
+2
+#include <string.h>
+3
+#include <math.h>
+4
+#include <stdlib.h>
+5
+void findMaxInEachRow(int arr[][100], int rows, int cols) {
+6
+    for (int i = 0; i < rows; i++) {
+7
+        int max = arr[i][0];
+8
+        for (int j = 1; j < cols; j++) {
+9
+            if (arr[i][j] > max) {
+10
+                max = arr[i][j];
+11
+            }
+12
+        }
+13
+        printf("%d\n", max);
+14
+    }
+15
+}
+16
+​
+17
+int main() {
+18
+    int rows, cols;
+19
+    scanf("%d", &rows);
+20
+    scanf("%d", &cols);
+21
+​
+22
+    int arr[100][100];
+23
+   for (int i = 0; i < rows; i++) {
+24
+        for (int j = 0; j < cols; j++) {
+25
+            scanf("%d", &arr[i][j]);
+26
+        }
+27
+    }
+28
+​
+29
+    findMaxInEachRow(arr, rows, cols);
+30
+​
+31
+    return 0;
+    }
