@@ -1,0 +1,155 @@
+Andrew is a stock trader who trades in N selected stocks. He has calculated the relative stock price changes in the N stocks from the previous day stock prices. Now, his lucky number is K, so he wishes to invest in the particular stock that has Kth smallest relative stock value. Write an algorithm for Andrew to find the Kth smallest stock price out of the selected N stocks.
+
+Input Format
+
+The first line of the input consists of two space-separated integers – numOfStocks and valuek, representing the number of selected stocks (N) And the value K for which he wishes to find the stock price, respectively. The second line consists of N space-separated integers – stock1, stock2, ……, stock N representing the relative stock prices of the selected stocks.
+
+Constraints
+
+1<=n<10^7
+
+Output Format
+
+Print an integer representing the Kth smallest stock price of selected N stocks.
+
+Sample Input 0
+
+7 5
+9 -3 8 -6 -7 18 10
+Sample Output 0
+
+9
+Explanation 0
+
+The sorted relative stock prices are [-7, -6, -3, 8, 9, 10, 18] So, the 5th smallest stock price is 9.
+
+Sample Input 1
+
+6 3
+10 21 33 44 18 28
+Sample Output 1
+
+21
+Submissions: 193
+Max Score: 0
+Difficulty: Medium
+Rate This Challenge:
+
+    
+More
+ 
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+void swap(int* a, int* b) {
+    int temp = *a;
+    *a = *b;
+1
+#include <stdio.h>
+2
+#include <string.h>
+3
+#include <math.h>
+4
+#include <stdlib.h>
+5
+void swap(int* a, int* b) {
+6
+    int temp = *a;
+7
+    *a = *b;
+8
+    *b = temp;
+9
+}
+10
+​
+11
+int partition(int arr[], int left, int right) {
+12
+    int pivot = arr[right];
+13
+    int i = left;
+14
+    for (int j = left; j < right; j++) {
+15
+        if (arr[j] <= pivot) {
+16
+            swap(&arr[i], &arr[j]);
+17
+            i++;
+18
+        }
+19
+    }
+20
+    swap(&arr[i], &arr[right]);
+21
+    return i;
+22
+}
+23
+​
+24
+int quickselect(int arr[], int left, int right, int k) {
+25
+    if (left == right) {
+26
+        return arr[left];
+27
+    }
+28
+​
+29
+    int pivot_index = partition(arr, left, right);
+30
+​
+31
+    if (k == pivot_index) {
+32
+        return arr[k];
+33
+    } else if (k < pivot_index) {
+34
+        return quickselect(arr, left, pivot_index - 1, k);
+35
+    } else {
+36
+        return quickselect(arr, pivot_index + 1, right, k);
+37
+    }
+38
+}
+39
+​
+40
+int main() {
+41
+    int numOfStocks, valuek;
+42
+    
+43
+    scanf("%d %d", &numOfStocks, &valuek);
+44
+    int stock_prices[numOfStocks];
+45
+    for (int i = 0; i < numOfStocks; i++) {
+46
+        scanf("%d", &stock_prices[i]);
+47
+    }
+48
+​
+49
+    int result = quickselect(stock_prices, 0, numOfStocks - 1, valuek - 1);
+50
+    printf("%d\n", result);
+51
+​
+52
+    return 0;
+53
+}
+54
+​
