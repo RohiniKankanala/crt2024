@@ -1,0 +1,53 @@
+Write a program to get a float value from the user and display it in the below-mentioned format. HINT: Use ceil() and floor() functions.
+
+Input Format
+
+Input consists of one float value.
+
+Constraints
+
+1<=n<10^7
+
+Output Format
+
+Output consists of one integer, its highest round off value and its lowest round off value.
+
+Sample Input 0
+
+54.5
+Sample Output 0
+
+54
+55.0
+54.0
+ 
+1
+import java.io.*;
+2
+import java.util.*;
+3
+public class FloatRoundOff {
+4
+    public static void main(String[] args) {
+5
+        Scanner scanner = new Scanner(System.in);
+6
+        float n = scanner.nextFloat();
+7
+        int integerPart = (int) n;
+8
+        double ceilValue = Math.ceil(n);
+9
+        double floorValue = Math.floor(n);
+10
+        System.out.println(integerPart);
+11
+        System.out.println(ceilValue);
+12
+        System.out.println(floorValue);
+13
+    }
+14
+}
+15
+​
