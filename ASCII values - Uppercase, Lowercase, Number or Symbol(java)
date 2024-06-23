@@ -1,0 +1,86 @@
+Write a program to find whether a given character is an uppercase, lowercase, number or symbol. If it is an alphabet find whether it is an Uppercase or Lowercase. If it is a number display Number else display Symbol.
+
+Input Format
+
+Input consists of 1 character
+
+Constraints
+
+1<=ch<=65535
+
+Output Format
+
+Print Upper if upper case letter Print Lower if lower case letter Print Number if number Print Symbol if symbol
+
+Sample Input 0
+
+A
+Sample Output 0
+
+Upper
+Sample Input 1
+
+d
+Sample Output 1
+
+Lower
+Sample Input 2
+
+8
+Sample Output 2
+
+Number
+Sample Input 3
+
+$
+Sample Output 3
+
+Symbol
+Submissions: 618
+Max Score: 0
+Difficulty: Medium
+Rate This Challenge:
+
+    
+More
+ 
+1
+import java.io.*;
+2
+import java.util.*;
+3
+import java.util.Scanner;
+4
+public class CharacterClassifier {
+5
+    public static void main(String[] args) {
+6
+        Scanner scanner = new Scanner(System.in);
+7
+        char ch = scanner.next().charAt(0);
+8
+        if (ch >= 'A' && ch <= 'Z') {
+9
+            System.out.println("Upper");
+10
+        } else if (ch >= 'a' && ch <= 'z') {
+11
+            System.out.println("Lower");
+12
+        } else if (ch >= '0' && ch <= '9') {
+13
+            System.out.println("Number");
+14
+        } else {
+15
+            System.out.println("Symbol");
+16
+        }
+17
+        
+18
+        scanner.close();
+19
+    }
+20
+}
