@@ -1,0 +1,87 @@
+Electricity board has decided to charge rupees based on the units consumed by a particular home. If the units consumed is less than or equal to 200, the cost for one unit is 0.5. If the unit is less than or equal to 400, the cost for one unit is 0.65 and Rs.100 extra charge. If the unit is less than or equal to 600, the cost for one unit is 0.80 and Rs.200 extra charge. If the unit is greater than 600 the cost for one unit is 1.25 and Rs.425 extra charge. You need to now calculate the electricity bill based on the units consumed (given input).
+
+Input Format
+
+Input consists of one integer. This corresponds to the units consumed.
+
+Constraints
+
+1<=n<=10^7
+
+Output Format
+
+The output consists of one integer. This corresponds to the electricity bill in rupees.
+
+Sample Input 0
+
+200
+Sample Output 0
+
+Rs.100
+
+1
+import java.io.*;
+2
+import java.util.*;
+3
+import java.util.Scanner;
+4
+​
+5
+public class ElectricityBillCalculator {
+6
+​
+7
+    public static void main(String[] args) {
+8
+        Scanner scanner = new Scanner(System.in);
+9
+        int unitsConsumed = scanner.nextInt();
+10
+        scanner.close();
+11
+​
+12
+        int bill = calculateElectricityBill(unitsConsumed);
+13
+​
+14
+        System.out.println("Rs." + bill);
+15
+    }
+16
+​
+17
+    public static int calculateElectricityBill(int unitsConsumed) {
+18
+        int bill = 0;
+19
+​
+20
+        if (unitsConsumed <= 200) {
+21
+            bill = (int) (unitsConsumed * 0.5); // 0.5 Rs per unit
+22
+        } else if (unitsConsumed <= 400) {
+23
+            bill = (int) (unitsConsumed * 0.65) + 100; // 0.65 Rs per unit + 100 extra charge
+24
+        } else if (unitsConsumed <= 600) {
+25
+            bill = (int) (unitsConsumed * 0.80) + 200; // 0.80 Rs per unit + 200 extra charge
+26
+        } else {
+27
+            bill = (int) (unitsConsumed * 1.25) + 425; // 1.25 Rs per unit + 425 extra charge
+28
+        }
+29
+​
+30
+        return bill;
+31
+    }
+32
+}
+33
+​
