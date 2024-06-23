@@ -1,0 +1,84 @@
+Accept two integer values from the user and return their product. If the product is greater than 1000, then return their sum
+
+Input Format
+
+Line 1: 1st Number value Line 2: 2nd Number value
+
+Constraints
+
+1<=num1<=10^7 1<=num2,=10^7
+
+Output Format
+
+Line 1: Result of the operation
+
+Sample Input 0
+
+10
+20
+Sample Output 0
+
+200
+Sample Input 1
+
+40
+30
+Sample Output 1
+
+70
+Sample Input 2
+
+50
+20
+Sample Output 2
+
+1000
+Sample Input 3
+
+100
+200
+Sample Output 3
+
+300
+Submissions: 609
+Max Score: 0
+Difficulty: Medium
+Rate This Challenge:
+
+    
+More
+ 
+1
+import java.io.*;
+2
+import java.util.*;
+3
+import java.util.Scanner;
+4
+public class ProductOrSum {
+5
+    public static void main(String[] args) {
+6
+        Scanner scanner = new Scanner(System.in);
+7
+        int num1 = scanner.nextInt();
+8
+        int num2 = scanner.nextInt();
+9
+        int product = num1 * num2;
+10
+        if (product > 1000) {
+11
+            int sum = num1 + num2;
+12
+            System.out.println(sum);
+13
+        } else {
+14
+            System.out.println(product);
+15
+        }
+16
+    }
+17
+}
