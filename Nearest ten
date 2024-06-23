@@ -1,0 +1,66 @@
+Write a program to return the nearest 10 multiple of any given number
+
+Input Format
+
+Read a number
+
+Constraints
+
+1<=n<=10^7
+
+Output Format
+
+Print nearest 10 multiple no
+
+Sample Input 0
+
+18
+Sample Output 0
+
+20
+Sample Input 1
+
+134
+Sample Output 1
+
+130
+Sample Input 2
+
+155
+Sample Output 2
+
+160 
+1
+#include <stdio.h>
+2
+#include <string.h>
+3
+#include <math.h>
+4
+#include <stdlib.h>
+5
+int main() {
+6
+    int n;
+7
+    scanf("%d", &n);
+8
+    int remainder = n % 10;
+9
+    if (remainder < 5) {
+10
+        n -= remainder;
+11
+    } else {
+12
+        n += (10 - remainder);
+13
+    }
+14
+    printf("%d\n", n);
+15
+    return 0;
+16
+}
+17
+​
